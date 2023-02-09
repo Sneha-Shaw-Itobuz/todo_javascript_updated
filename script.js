@@ -7,7 +7,6 @@ const completedButton = document.getElementById("completedButton");
 const filters = document.querySelectorAll(".filters button");
 
 let tasks = [];
-
 const addTask = () => {
   let task = taskInput.value;
   if (task) {
@@ -17,9 +16,8 @@ const addTask = () => {
   }
 };
 
-//  <input type="checkbox" ${task.completed ? "checked" : ""} id="${task.id}">
-
 const render = () => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
   container.innerHTML = "";
   tasks.forEach((task) => {
     let li = document.createElement("li");
@@ -74,8 +72,12 @@ function toggleCompleted(id) {
 container.addEventListener("click", (e) => {
   if (e.target.classList.contains("delete")) {
     deleteTask(e.target.id);
+  } else if (e.target.classList.contains("fa-trash")) {
+    deleteTask(e.target.parentElement.id);
   } else if (e.target.classList.contains("complete")) {
     toggleCompleted(e.target.id);
+  } else if (e.target.classList.contains("fa-check")) {
+    toggleCompleted(e.target.parentElement.id);
   }
 });
 
@@ -115,5 +117,14 @@ allButton.addEventListener("click", () => {
 taskInput.addEventListener("keyup", (e) => {
   if (e.key == "Enter") {
     addTask();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ref = localStorage.getItem("tasks");
+  console.log(ref);
+  if (ref) {
+    tasks = JSON.parse(ref);
+    render();
   }
 });
