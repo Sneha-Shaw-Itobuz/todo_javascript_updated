@@ -1,10 +1,10 @@
-let taskInput = document.getElementById("taskInput");
-let container = document.getElementById("js-list");
-let clearButton = document.getElementById("clearButton");
-let allButton = document.getElementById("AllButton");
-let incompleteButton = document.getElementById("incompleteButton");
-let completedButton = document.getElementById("completedButton");
-let filters = document.querySelectorAll(".filters button");
+const taskInput = document.getElementById("taskInput");
+const container = document.getElementById("js-list");
+const clearButton = document.getElementById("clearButton");
+const allButton = document.getElementById("AllButton");
+const incompleteButton = document.getElementById("incompleteButton");
+const completedButton = document.getElementById("completedButton");
+const filters = document.querySelectorAll(".filters button");
 
 let tasks = [];
 
