@@ -75,7 +75,9 @@ button {
 }
 
 .active {
-  background-color: red;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid red;
 }
 
 .completed > span {
