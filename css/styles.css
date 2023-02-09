@@ -25,6 +25,11 @@ body{
     color: #F55050;
 }
 
+.inputContainer{
+    width: 20%;
+    display: flex;
+}
+
 .inputContainer input{
     border-bottom: 1px solid #F55050;
     border-right:none;
@@ -32,6 +37,7 @@ body{
     border-top: none;
     padding: 10px;
     outline: none;
+    width: 80%;
 }
 
 button {
@@ -96,4 +102,8 @@ span{
     overflow: auto;
     border: 1px solid red;
     padding: 10px 20px;
+}
+
+#addButton {
+    width: 20%;
 }
